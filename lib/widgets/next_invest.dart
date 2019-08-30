@@ -18,7 +18,7 @@ class _NextInvestState extends State<NextInvest> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: Colors.blueGrey.shade900,
+        color: Colors.green,
         child: Center(
           child: updateList(),
         ));

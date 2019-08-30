@@ -74,15 +74,14 @@ class _TelaDeServicosState extends State<TelaDeServicos> {
               //  fit: BoxFit.fill,
               //)
             )),
-            GestureDetector(
-              onTap: () {},
-              child: ListView(
+            ListView(
                 children: <Widget>[
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Card(
                       color: Colors.grey.shade700,
                       child: SwitchListTile(
+                        
                         title: new Text(
                           "Bradesco Câmbio",
                           style: TextStyle(
@@ -136,7 +135,7 @@ class _TelaDeServicosState extends State<TelaDeServicos> {
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                         secondary: Image.asset('images/next.png'),
-                        value: _addServico,
+                        value: _addServico2,
                         activeColor: Colors.green,
                         inactiveThumbColor: Colors.red,
                         inactiveTrackColor: Colors.red,
@@ -179,7 +178,7 @@ class _TelaDeServicosState extends State<TelaDeServicos> {
                           'images/banco_central.png',
                           width: 95,
                         ),
-                        value: _addServico,
+                        value: _addServico3,
                         activeColor: Colors.green,
                         inactiveThumbColor: Colors.red,
                         inactiveTrackColor: Colors.red,
@@ -221,7 +220,7 @@ class _TelaDeServicosState extends State<TelaDeServicos> {
                           'images/mb.png',
                           width: 95,
                         ),
-                        value: _addServico,
+                        value: _addServico4,
                         activeColor: Colors.green,
                         inactiveThumbColor: Colors.red,
                         inactiveTrackColor: Colors.red,
@@ -239,8 +238,7 @@ class _TelaDeServicosState extends State<TelaDeServicos> {
                   ),
                 ],
               ),
-              behavior: HitTestBehavior.opaque,
-            ),
+            
           ]);
         });
   }
@@ -333,7 +331,7 @@ class _TelaDeServicosState extends State<TelaDeServicos> {
                             child: Padding(
                               padding: const EdgeInsets.only(top: 12, left: 10),
                               child: new Text(
-                                "Pagamento",
+                                "Pagamentos/Cobranças",
                                 style: TextStyle(
                                     fontWeight: FontWeight.w400,
                                     fontSize: 15,

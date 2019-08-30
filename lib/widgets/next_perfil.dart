@@ -54,7 +54,7 @@ class _NextPerfilState extends State<NextPerfil> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-        color: Colors.grey.shade700,
+        color: Colors.green,
         child: Column(
           //mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
