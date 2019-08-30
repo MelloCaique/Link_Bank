@@ -56,34 +56,34 @@ class _NextState extends State<Next> {
         BottomNavigationBarItem(
             icon: Icon(
               Icons.credit_card,
-              color: Colors.grey,
+              color: Colors.green,
             ),
             title: Text(
               "Crédito",
               style: TextStyle(
-                color: Colors.grey,
+                color: Colors.green,
               ),
             )),
         BottomNavigationBarItem(
             icon: Icon(
               Icons.monetization_on,
-              color: Colors.grey,
+              color: Colors.green,
             ),
             title: Text(
               "Investimentos",
               style: TextStyle(
-                color: Colors.grey,
+                color: Colors.green,
               ),
             )),
         BottomNavigationBarItem(
             icon: Icon(
               Icons.money_off,
-              color: Colors.grey,
+              color: Colors.green,
             ),
             title: Text(
               "Gastos",
               style: TextStyle(
-                color: Colors.grey,
+                color: Colors.green,
               ),
             )),
       ]),
