@@ -99,7 +99,7 @@ class _QrCodeState extends State<QrCode> {
                 ),
                 Padding(
                   padding:
-                      const EdgeInsets.only(left: 110, right: 110, top: 20),
+                      const EdgeInsets.only(left: 105, right: 105, top: 20),
                   child: new RaisedButton(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20)),
@@ -114,6 +114,7 @@ class _QrCodeState extends State<QrCode> {
                               fontWeight: FontWeight.bold,
                               fontSize: 18),
                         ),
+                        SizedBox(width: 2,),
                         Icon(
                           Icons.arrow_forward,
                           color: Colors.black,

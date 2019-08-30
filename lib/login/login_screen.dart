@@ -98,7 +98,7 @@ class _LoginState extends State<Login> {
                     color:
                         Theme.of(context).primaryColorLight.withOpacity(0.65),
                   ),
-                  height: 210,
+                  height: 250,
                   width: 300,
                   child: new Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
