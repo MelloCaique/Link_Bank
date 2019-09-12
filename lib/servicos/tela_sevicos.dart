@@ -58,193 +58,196 @@ class _TelaDeServicosState extends State<TelaDeServicos> {
         builder: (_) {
           return Scaffold(
             appBar: AppBar(
-              backgroundColor: Colors.purpleAccent,
-              title: Text("Serviços disponíveis", style: TextStyle(color: Colors.white),),
+              backgroundColor: Colors.white,
+              elevation: 0,
+              iconTheme: IconThemeData(color: Colors.purple),
+              title: Text(
+                "Serviços disponíveis",
+                style: TextStyle(color: Colors.purple),
+              ),
               centerTitle: true,
             ),
-                      body: Stack(children: <Widget>[
+            body: Stack(children: <Widget>[
               Container(
-                width: double.infinity,
+                  width: double.infinity,
                   decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    Colors.purple.withOpacity(0.7),
-                    Colors.blue.withOpacity(0.7),
-                  ],
-                  begin: Alignment.bottomLeft,
-                  end: Alignment.bottomRight,
-                ),
-                //width: double.infinity,
-                //child: Image.asset(
-                //  'images/fundo_servicos.jpg',
-                //  fit: BoxFit.fill,
-                //)
-              )),
+                    gradient: LinearGradient(
+                      colors: [
+                        Colors.purple.withOpacity(0.7),
+                        Colors.blue.withOpacity(0.7),
+                      ],
+                      begin: Alignment.bottomLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                    //width: double.infinity,
+                    //child: Image.asset(
+                    //  'images/fundo_servicos.jpg',
+                    //  fit: BoxFit.fill,
+                    //)
+                  )),
               ListView(
-                  children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Card(
-                        color: Colors.grey.shade700,
-                        child: SwitchListTile(
-                          
-                          title: new Text(
-                            "Bradesco Câmbio",
-                            style: TextStyle(
-                              color: Colors.red,
-                              fontStyle: FontStyle.normal,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                            ),
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Card(
+                      color: Colors.grey.shade700,
+                      child: SwitchListTile(
+                        title: new Text(
+                          "Bradesco Câmbio",
+                          style: TextStyle(
+                            color: Colors.red,
+                            fontStyle: FontStyle.normal,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
                           ),
-                          subtitle: Text(
-                            "Moedas estrangeiras",
-                            style: TextStyle(
-                                color: Colors.white, fontWeight: FontWeight.bold),
-                          ),
-                          secondary: Image.asset('images/bradesco_logo.png'),
-                          value: _addServico,
-                          activeColor: Colors.green,
-                          inactiveThumbColor: Colors.red,
-                          inactiveTrackColor: Colors.red,
-                          activeTrackColor: Colors.green,
-                          onChanged: (val) {
-                            setState(() {
-                              if (_addServico == false) {
-                                _addServico = true;
-                              } else
-                                _addServico = false;
-                            });
-                          },
                         ),
+                        subtitle: Text(
+                          "Moedas estrangeiras",
+                          style: TextStyle(
+                              color: Colors.white, fontWeight: FontWeight.bold),
+                        ),
+                        secondary: Image.asset('images/bradesco_logo.png'),
+                        value: _addServico,
+                        activeColor: Colors.green,
+                        inactiveThumbColor: Colors.red,
+                        inactiveTrackColor: Colors.red,
+                        activeTrackColor: Colors.green,
+                        onChanged: (val) {
+                          setState(() {
+                            if (_addServico == false) {
+                              _addServico = true;
+                            } else
+                              _addServico = false;
+                          });
+                        },
                       ),
                     ),
-                    Divider(
+                  ),
+                  Divider(
+                    color: Colors.white,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Card(
+                      color: Colors.green.shade700,
+                      child: SwitchListTile(
+                        title: new Text(
+                          "Next",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontStyle: FontStyle.normal,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                          ),
+                        ),
+                        subtitle: Text(
+                          "Banco digital",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        secondary: Image.asset('images/next.png'),
+                        value: _addServico2,
+                        activeColor: Colors.green,
+                        inactiveThumbColor: Colors.red,
+                        inactiveTrackColor: Colors.red,
+                        activeTrackColor: Colors.green,
+                        onChanged: (val) {
+                          setState(() {
+                            if (_addServico2 == false) {
+                              _addServico2 = true;
+                            } else
+                              _addServico2 = false;
+                          });
+                        },
+                      ),
+                    ),
+                  ),
+                  Divider(
+                    color: Colors.white,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Card(
                       color: Colors.white,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Card(
-                        color: Colors.green.shade700,
-                        child: SwitchListTile(
-                          title: new Text(
-                            "Next",
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontStyle: FontStyle.normal,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                            ),
+                      child: SwitchListTile(
+                        title: new Text(
+                          "Banco Central",
+                          style: TextStyle(
+                            color: Colors.blue.shade900,
+                            fontStyle: FontStyle.normal,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
                           ),
-                          subtitle: Text(
-                            "Banco digital",
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          secondary: Image.asset('images/next.png'),
-                          value: _addServico2,
-                          activeColor: Colors.green,
-                          inactiveThumbColor: Colors.red,
-                          inactiveTrackColor: Colors.red,
-                          activeTrackColor: Colors.green,
-                          onChanged: (val) {
-                            setState(() {
-                              if (_addServico2 == false) {
-                                _addServico2 = true;
-                              } else
-                                _addServico2 = false;
-                            });
-                          },
                         ),
+                        subtitle: Text(
+                          "Moeda em Circulação",
+                          style: TextStyle(
+                              color: Colors.blueGrey,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        secondary: Image.asset(
+                          'images/banco_central.png',
+                          width: 95,
+                        ),
+                        value: _addServico3,
+                        activeColor: Colors.green,
+                        inactiveThumbColor: Colors.red,
+                        inactiveTrackColor: Colors.red,
+                        activeTrackColor: Colors.green,
+                        onChanged: (val) {
+                          setState(() {
+                            if (_addServico3 == false) {
+                              _addServico3 = true;
+                            } else
+                              _addServico3 = false;
+                          });
+                        },
                       ),
                     ),
-                    Divider(
-                      color: Colors.white,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Card(
-                        color: Colors.white,
-                        child: SwitchListTile(
-                          title: new Text(
-                            "Banco Central",
-                            style: TextStyle(
-                              color: Colors.blue.shade900,
-                              fontStyle: FontStyle.normal,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                            ),
+                  ),
+                  Divider(
+                    color: Colors.white,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Card(
+                      color: Colors.black,
+                      child: SwitchListTile(
+                        title: new Text(
+                          "Mock Bank",
+                          style: TextStyle(
+                            color: Colors.amber,
+                            fontStyle: FontStyle.normal,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
                           ),
-                          subtitle: Text(
-                            "Moeda em Circulação",
-                            style: TextStyle(
-                                color: Colors.blueGrey,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          secondary: Image.asset(
-                            'images/banco_central.png',
-                            width: 95,
-                          ),
-                          value: _addServico3,
-                          activeColor: Colors.green,
-                          inactiveThumbColor: Colors.red,
-                          inactiveTrackColor: Colors.red,
-                          activeTrackColor: Colors.green,
-                          onChanged: (val) {
-                            setState(() {
-                              if (_addServico3 == false) {
-                                _addServico3 = true;
-                              } else
-                                _addServico3 = false;
-                            });
-                          },
                         ),
+                        subtitle: Text(
+                          "Conta",
+                          style: TextStyle(
+                              color: Colors.white, fontWeight: FontWeight.bold),
+                        ),
+                        secondary: Image.asset(
+                          'images/mb.png',
+                          width: 95,
+                        ),
+                        value: _addServico4,
+                        activeColor: Colors.green,
+                        inactiveThumbColor: Colors.red,
+                        inactiveTrackColor: Colors.red,
+                        activeTrackColor: Colors.green,
+                        onChanged: (val) {
+                          setState(() {
+                            if (_addServico4 == false) {
+                              _addServico4 = true;
+                            } else
+                              _addServico4 = false;
+                          });
+                        },
                       ),
                     ),
-                    Divider(
-                      color: Colors.white,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Card(
-                        color: Colors.black,
-                        child: SwitchListTile(
-                          title: new Text(
-                            "Mock Bank",
-                            style: TextStyle(
-                              color: Colors.amber,
-                              fontStyle: FontStyle.normal,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                            ),
-                          ),
-                          subtitle: Text(
-                            "Conta",
-                            style: TextStyle(
-                                color: Colors.white, fontWeight: FontWeight.bold),
-                          ),
-                          secondary: Image.asset(
-                            'images/mb.png',
-                            width: 95,
-                          ),
-                          value: _addServico4,
-                          activeColor: Colors.green,
-                          inactiveThumbColor: Colors.red,
-                          inactiveTrackColor: Colors.red,
-                          activeTrackColor: Colors.green,
-                          onChanged: (val) {
-                            setState(() {
-                              if (_addServico4 == false) {
-                                _addServico4 = true;
-                              } else
-                                _addServico4 = false;
-                            });
-                          },
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              
+                  ),
+                ],
+              ),
             ]),
           );
         });
@@ -284,27 +287,23 @@ class _TelaDeServicosState extends State<TelaDeServicos> {
                       child: new Container(
                         child: Padding(
                           padding: const EdgeInsets.all(2.0),
-                          child: Card(
-                            elevation: 4,
-                            child: new UserAccountsDrawerHeader(
-                              decoration: BoxDecoration(
-                                  color: Colors.pink[500].withOpacity(0.5),
-                                  borderRadius:
-                                      new BorderRadius.all(Radius.circular(6))),
-                              accountEmail: new Text(
-                                "Email: user@email.com",
-                                style: TextStyle(fontStyle: FontStyle.italic),
+                          child: new UserAccountsDrawerHeader(
+                            decoration: BoxDecoration(
+                                color: Colors.pink[500].withOpacity(0.5),
+                                borderRadius:
+                                    new BorderRadius.all(Radius.circular(6))),
+                            accountEmail: new Text(
+                              "Email: user@email.com",
+                              style: TextStyle(fontStyle: FontStyle.italic),
+                            ),
+                            accountName: new Text(
+                              "Bem-vindo: User",
+                              style: TextStyle(
+                                color: Colors.purple.shade800,
                               ),
-                              accountName: new Text(
-                                "Bem-vindo: User",
-                                style: TextStyle(
-                                  color: Colors.purple.shade800,
-                                ),
-                              ),
-                              currentAccountPicture: new CircleAvatar(
-                                backgroundImage:
-                                    AssetImage("images/avatar.png"),
-                              ),
+                            ),
+                            currentAccountPicture: new CircleAvatar(
+                              backgroundImage: AssetImage("images/avatar.png"),
                             ),
                           ),
                         ),
@@ -327,23 +326,20 @@ class _TelaDeServicosState extends State<TelaDeServicos> {
                       padding: const EdgeInsets.all(5.0),
                       child: GestureDetector(
                         onTap: goToQrcode,
-                        child: Card(
-                          elevation: 4,
-                          child: new Container(
-                            decoration: new BoxDecoration(
-                                color: Colors.blue[400].withOpacity(0.5),
-                                borderRadius:
-                                    new BorderRadius.all(Radius.circular(6.0))),
-                            height: 40,
-                            child: Padding(
-                              padding: const EdgeInsets.only(top: 12, left: 10),
-                              child: new Text(
-                                "Pagamentos/Cobranças",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 15,
-                                    color: Colors.black),
-                              ),
+                        child: Container(
+                          decoration: new BoxDecoration(
+                              color: Colors.blue[400].withOpacity(0.5),
+                              borderRadius:
+                                  new BorderRadius.all(Radius.circular(6.0))),
+                          height: 40,
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 12, left: 10),
+                            child: new Text(
+                              "Pagamentos/Cobranças",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 15,
+                                  color: Colors.black),
                             ),
                           ),
                         ),
@@ -356,23 +352,20 @@ class _TelaDeServicosState extends State<TelaDeServicos> {
                       padding: const EdgeInsets.all(5.0),
                       child: GestureDetector(
                         onTap: () => debugPrint("função CALL"),
-                        child: Card(
-                          elevation: 4,
-                          child: new Container(
-                            decoration: new BoxDecoration(
-                                color: Colors.blue[400].withOpacity(0.5),
-                                borderRadius:
-                                    new BorderRadius.all(Radius.circular(6.0))),
-                            height: 40,
-                            child: Padding(
-                              padding: const EdgeInsets.only(top: 12, left: 10),
-                              child: new Text(
-                                "Grupos",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 15,
-                                    color: Colors.black),
-                              ),
+                        child: Container(
+                          decoration: new BoxDecoration(
+                              color: Colors.blue[400].withOpacity(0.5),
+                              borderRadius:
+                                  new BorderRadius.all(Radius.circular(6.0))),
+                          height: 40,
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 12, left: 10),
+                            child: new Text(
+                              "Grupos",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 15,
+                                  color: Colors.black),
                             ),
                           ),
                         ),
@@ -385,23 +378,20 @@ class _TelaDeServicosState extends State<TelaDeServicos> {
                       padding: const EdgeInsets.all(5.0),
                       child: GestureDetector(
                         onTap: () => debugPrint("função CALL"),
-                        child: Card(
-                          elevation: 4,
-                          child: new Container(
-                            decoration: new BoxDecoration(
-                                color: Colors.blue[400].withOpacity(0.5),
-                                borderRadius:
-                                    new BorderRadius.all(Radius.circular(6.0))),
-                            height: 40,
-                            child: Padding(
-                              padding: const EdgeInsets.only(top: 12, left: 10),
-                              child: new Text(
-                                "Configurações",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 15,
-                                    color: Colors.black),
-                              ),
+                        child: Container(
+                          decoration: new BoxDecoration(
+                              color: Colors.blue[400].withOpacity(0.5),
+                              borderRadius:
+                                  new BorderRadius.all(Radius.circular(6.0))),
+                          height: 40,
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 12, left: 10),
+                            child: new Text(
+                              "Configurações",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 15,
+                                  color: Colors.black),
                             ),
                           ),
                         ),
@@ -414,23 +404,20 @@ class _TelaDeServicosState extends State<TelaDeServicos> {
                       padding: const EdgeInsets.all(5.0),
                       child: GestureDetector(
                         onTap: () => debugPrint("função CALL"),
-                        child: Card(
-                          elevation: 4,
-                          child: new Container(
-                            decoration: new BoxDecoration(
-                                color: Colors.blue[400].withOpacity(0.5),
-                                borderRadius:
-                                    new BorderRadius.all(Radius.circular(6.0))),
-                            height: 40,
-                            child: Padding(
-                              padding: const EdgeInsets.only(top: 12, left: 10),
-                              child: new Text(
-                                "Ajuda",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 15,
-                                    color: Colors.black),
-                              ),
+                        child: Container(
+                          decoration: new BoxDecoration(
+                              color: Colors.blue[400].withOpacity(0.5),
+                              borderRadius:
+                                  new BorderRadius.all(Radius.circular(6.0))),
+                          height: 40,
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 12, left: 10),
+                            child: new Text(
+                              "Ajuda",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 15,
+                                  color: Colors.black),
                             ),
                           ),
                         ),
@@ -454,7 +441,7 @@ class _TelaDeServicosState extends State<TelaDeServicos> {
             color: Colors.white,
             size: 35,
           ),
-          backgroundColor: Colors.red,
+          backgroundColor: Colors.pink,
           elevation: 20,
           onPressed: () => _adicionarServico(context),
         ),

@@ -40,105 +40,131 @@ class _QrCodeState extends State<QrCode> {
         appBar: AppBar(
           title: Text("Pagamentos/Cobranças"),
           centerTitle: true,
-          backgroundColor: Colors.redAccent,
+          backgroundColor: Colors.blue,
         ),
-        floatingActionButton: FloatingActionButton(
-          backgroundColor: Colors.white,
-          elevation: 10,
-          child: Icon(
-            Icons.camera,
-            color: Colors.red,
-          ),
-          onPressed: scan,
-        ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
-        body: Container(
-          color: Colors.white,
-          child: SingleChildScrollView(
-            child: Column(
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: TextFormField(
-                    validator: (value) {
-                      if (value.isNotEmpty) {
-                      } else {
-                        return ('Erro: Digite o nome do favorecido');
-                      }
-                    },
-                    controller: _nomeFavorecido,
-                    decoration:
-                        InputDecoration(labelText: 'Nome do favorecido'),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: TextFormField(
-                    validator: (value) {
-                      if (value.isNotEmpty) {
-                      } else {
-                        return ('Erro: Digite o valor para envio');
-                      }
-                    },
-                    controller: _valor,
-                    decoration: InputDecoration(labelText: 'Valor'),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: TextFormField(
-                    validator: (value) {
-                      if (value.isNotEmpty) {
-                      } else {
-                        return ('Erro: Digite o nome do depositante');
-                      }
-                    },
-                    controller: _nomeDeposito,
-                    decoration: InputDecoration(labelText: 'Nome Depositante'),
-                  ),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsets.only(left: 105, right: 105, top: 20),
-                  child: new RaisedButton(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20)),
-                    color: Colors.red,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text(
-                          "Gerar QrCode",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18),
-                        ),
-                        SizedBox(width: 2,),
-                        Icon(
-                          Icons.arrow_forward,
-                          color: Colors.black,
-                        ),
-                      ],
+        body: SingleChildScrollView(
+                  child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              SingleChildScrollView(
+                child: Column(
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: TextFormField(
+                        validator: (value) {
+                          if (value.isNotEmpty) {
+                          } else {
+                            return ('Erro: Digite o nome do favorecido');
+                          }
+                        },
+                        controller: _nomeFavorecido,
+                        decoration:
+                            InputDecoration(labelText: 'Nome do favorecido'),
+                      ),
                     ),
-                    onPressed: () {
-                      if (_formKey.currentState.validate()) {
-                        print("validou!");
-                        gerar();
-                      }
-                    },
-                  ),
+                    Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: TextFormField(
+                        validator: (value) {
+                          if (value.isNotEmpty) {
+                          } else {
+                            return ('Erro: Digite o valor para envio');
+                          }
+                        },
+                        controller: _valor,
+                        decoration: InputDecoration(labelText: 'Valor'),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: TextFormField(
+                        validator: (value) {
+                          if (value.isNotEmpty) {
+                          } else {
+                            return ('Erro: Digite o nome do depositante');
+                          }
+                        },
+                        controller: _nomeDeposito,
+                        decoration:
+                            InputDecoration(labelText: 'Nome Depositante'),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.purple.withOpacity(0.3),
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                        child: Text(
+                          barcode,
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-                Padding(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-                  child: Text(
-                    barcode,
-                    textAlign: TextAlign.center,
+              ),
+              Container(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: <Widget>[
+                    Container(
+                height: 60,
+                child: RaisedButton.icon(
+                  elevation: 0,
+                  materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                  color: Colors.purple,
+                  icon: Icon(
+                    Icons.monetization_on,
+                    color: Colors.white,
                   ),
+                  label: Text(
+                    'Gerar Cobrança',
+                    style: Theme.of(context).appBarTheme.textTheme.title,
+                  ),
+                  onPressed: () {
+                    if (_formKey.currentState.validate()) {
+                      print("validou!");
+                      gerar();
+                    }
+                  },
                 ),
-              ],
-            ),
+              ),
+              Container(
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
+                        colors: [
+                      Colors.white,
+                      Colors.purple,
+                    ])),
+                height: 60,
+                child: RaisedButton.icon(
+                  elevation: 0,
+                  materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                  color: Theme.of(context).accentColor,
+                  icon: Icon(
+                    Icons.camera,
+                    color: Colors.white,
+                  ),
+                  label: Text(
+                    'Pagamento',
+                    style: Theme.of(context).appBarTheme.textTheme.title,
+                  ),
+                  onPressed: () {
+                    scan();
+                  },
+                ),
+              ),
+                  ],
+                ),
+              )
+            ],
           ),
         ),
       ),
